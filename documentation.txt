@@ -1,0 +1,31 @@
+In the Util script, in BounceOffWalls method, I decreased the ScoreManager.Lives
+when the ball hits bottom of screen.
+
+
+I added a StopBall method in BallController to stop the ball when it's game over.
+-	Adjusted the FixedUpdate(), regarding ScoreManager.Lives.
+
+
+The player can reset the game by pressing S. I added a StopBall() and ResetBall()
+in the BallController script utilizing rb2D.Sleep() and rb2DWakeUp().
+-	Detecting Input.GetKey(S) is in PlayerController. It also resets the ball's
+position.
+
+
+Destroying each block increases the score by 1. I put ScoreManager.Score++; in
+the Block script, in UpdateBlockState().
+
+
+
+I added public GameObject prefabBlockManager to PlayerController script.
+-	After the BlockManager gets destroyed, I instantiate the prefab.
+-	It only works once. After one time, it will keep instantiating the prefab...
+
+
+When all 38 blocks are destroyed, the Debug.Text will say, "You win!"
+-	I went into GameConsole script, into Update() to do this.
+
+
+I also added instructions on what keys to press to restart, or spawn another ball in the Debug.Text, in GameConsole script.
+-	In PlayerController script, if player presses D, another ball spawns.
+-	3 more lives are added, for each ball spawn.
